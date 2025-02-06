@@ -1,0 +1,15 @@
+{
+  "name": "pug-pratice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files '*.html, *.css'",
+    "sass": "sass --watch styles.sass:styles.css",
+    "pug": "pug views/ -o ./ --watch",
+    "dev": "npm-run-all --parallel pug sass start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

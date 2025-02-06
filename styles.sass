@@ -1,0 +1,124 @@
+$color_yellow: #ffb336
+$color_blue: #27232F
+$color_white: #f3f7f7
+$color_grey: #333333
+$color_pink: #FFE8E8
+
+$font_base_size: 10px
+
+$max_content_width: 768px
+
+*
+    // border: solid 1px
+    position: relative
+html,body
+    padding: 0px
+    margin: 0px
+
+@mixin size($w,$h)
+    width: $w
+    height: $w
+
+@mixin center
+    left: 50%
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
+    
+.header
+    height: 150px
+    background-color: $color_pink
+    & .icon 
+        width: 100px
+        position: absolute
+        left: 90%
+        top: 100%
+        transform: translateX(-100%) translateY(-100%)
+        
+.max_width
+    width: $max_content_width
+    margin-left: auto
+    margin-right: auto
+.content
+    font-family: "Work Sans", "Noto Sans TC", sans-serif
+    padding: 50px
+    & h5
+        margin-top: 10px
+    & .title_hr
+        border: solid 3px $color_yellow
+        width: 100px
+    & h1
+        font-size: $font_base_size * 4
+    & h1.small_english
+        font-size: $font_base_size * 2.4
+    & h2
+        font-size: $font_base_size * 3
+    & h2.small_english
+        font-size: $font_base_size * 1.6
+    & h3
+        font-size: $font_base_size * 2
+    & h3.small_english
+        font-size: $font_base_size * 1.2
+    & .small_english
+        // 讓英文離中文更近
+        margin-top: -15px
+    & .color_chip
+        display: inline-block
+        margin-right: 15px
+        & .color_tag, & .color_block
+            display: inline-block
+            // 元素間垂直對齊置中
+            // vertical-align是上下，text-align是左右
+            vertical-align: middle
+        & .color_tag
+            // 因為英文和數字寬度不同，指定一個統一寬度較整齊
+            width: 67px
+            margin-right: 3px
+        & .color_block
+            border: solid 2px $color_white
+            +size(35px,35px)
+        & .color_block_yellow
+            background-color: $color_yellow
+        & .color_block_blue
+            background-color: $color_blue
+        & .color_block_white
+            background-color: $color_white
+        & .color_block_grey
+            background-color: $color_grey
+    & .button
+        border: solid 2px $color_white
+        display: inline-block
+        padding: 5px 25px
+        margin-right: 10px
+        letter-spacing: 2px
+        font-size: $font_base_size * 1.5
+        font-weight: bold
+    & .button_blue
+        background-color: $color_blue
+        color: white
+        font-weight: 500
+    & .button_yellow
+        background-color: $color_yellow
+
+.content_white 
+    background-color: $color_white
+    color: $color_blue
+    & .color_chip .color_block
+        border: solid 2px $color_blue
+    & .button
+        border: solid 2px $color_blue
+
+.content_grey 
+    background-color: $color_grey
+    color: $color_white
+    & h1,& h2,& h3
+        // 因為在深色背景中，字體看起來會太胖
+        // h1.h2.h3預設是用bold(700)
+        font-weight: 500
+
+.content_blue 
+    background-color: $color_blue
+    color: $color_white
+    & h1,& h2,& h3
+        // 因為在深色背景中，字體看起來會太胖
+        // h1.h2.h3預設是用bold(700)
+        font-weight: 500
